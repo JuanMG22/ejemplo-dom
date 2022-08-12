@@ -1,3 +1,4 @@
+//Datos de mi proyecto
 const productos = [
   {
     id: 1,
@@ -22,18 +23,21 @@ const productos = [
   },
 ];
 
+const carrito = []
+
 let cartas = document.getElementById("cartas");
 
-
 productos.map(producto => {
+    const { imagen, nombre, precio } = producto; //Explicar destructuring
+
     const carta = document.createElement("div")
     carta.className = "card col-md-2 container-fluid"
 
     carta.innerHTML = `
-        <img class="card-img-top" src=${producto.imagen} alt="Card image cap">
+        <img class="card-img-top" src=${imagen} alt="Card image cap">
         <div class="card-body">
-            <h5 class="card-title">${producto.nombre}</h5>
-            <p class="card-text">$ ${producto.precio}</p>
+            <h5 class="card-title">${nombre}</h5>
+            <p class="card-text">$ ${precio}</p>
             <a href="#" class="btn btn-primary">Comprar</a>
         </div>
     `;
